@@ -1,0 +1,30 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "HELLO" : {
+      "comment" : "Localizable.strings\n  WhatsNew\n\n  Created by Derick on 29/6/23.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hello"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Halo"
+          }
+        }
+      }
+    },
+    "Hello, world!" : {
+
+    },
+    "SwiftUI Button" : {
+
+    }
+  },
+  "version" : "1.0"
+}

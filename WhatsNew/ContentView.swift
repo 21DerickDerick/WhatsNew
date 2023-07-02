@@ -6,19 +6,46 @@
 //
 
 import SwiftUI
+import OSLog
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView {
+            VStack {
+                Image(systemName: "globe")
+                    .imageScale(.large)
+                    .foregroundStyle(.tint)
+                Text("Hello, world!")
+                NavigationLink {
+                    DetailsView()
+                } label: {
+                    Text("Go to details page")
+                }
+                .padding()
+                .accessibilityIdentifier("details_button")
+            }
+            .onAppear(perform: Logging.testLog)
+            .padding()
         }
-        .padding()
+
+    }
+}
+
+struct DetailsView: View {
+    let logger = Logger(subsystem: "DetailsView", category: "Testing")
+    
+    var body: some View {
+        Button("Error button") {
+            logger.log(level: .error, "Error from details view")
+        }
+        .accessibilityIdentifier("error_button")
     }
 }
 
 #Preview {
     ContentView()
+}
+
+#Preview {
+    DetailsView()
 }
